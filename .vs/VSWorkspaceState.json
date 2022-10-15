@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\controllers",
+    "\\models"
   ],
-  "SelectedNode": "\\LICENSE",
+  "SelectedNode": "\\controllers\\cursos.js",
   "PreviewInSolutionExplorer": false
 }
