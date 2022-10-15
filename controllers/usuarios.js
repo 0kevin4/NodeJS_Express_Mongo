@@ -5,10 +5,6 @@ const ruta = express.Router();
 
 
 
-ruta.get('/', (req,res) => {
-    res.json('Respuesta a peticion GET de USUARIOS funcionando perfectamente....');
-});
-
 
 module.exports = ruta;
 
@@ -121,3 +117,24 @@ ruta.delete('/:email', (req, res) => {
         })
     });
 });
+
+//funcionalidad asincrona para listar todos los usuarios activos
+
+async function listarUsuarioActivos(){
+    let usuarios = await Usuario.find({"estado": true});
+    return usuarios;
+}
+
+//Endpoint de Tipo GET para el recurso usuarios. lista todos los usuarios activos
+ruta.get('/',(req, res) => {
+    let resultado = listarUsuarioActivos();
+    resultado.then(usuarios => {
+        res.json(usuarios)
+    }).catch(err => {
+        res.status(400).json(
+            {
+                err
+            }
+        )
+    })
+})
