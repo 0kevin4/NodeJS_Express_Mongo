@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 
 //conexion a la base de datos mongodb
-mongoose.connect('mongodb://localhost:27017/userscoursesdb', {
+mongoose.connect('mongodb+srv://Kevin:Kevinmoreno31416@apirest.1y3y8se.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true, useUnifiedTopology: true
 })
 
