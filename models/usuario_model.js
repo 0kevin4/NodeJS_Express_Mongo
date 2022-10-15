@@ -1,4 +1,3 @@
-const boolean = require('@hapi/joi/lib/types/boolean');
 const mongoose = require('mongoose');
 
 const usuariosSchema = new mongoose.Schema({
@@ -23,3 +22,5 @@ const usuariosSchema = new mongoose.Schema({
     required:false
   }
 });
+
+module.exports = mongoose.model('Usuario', usuariosSchema);
